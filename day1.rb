@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 inventory = []
 
-IO.foreach('input/day1.txt', '') { |paragraph| inventory << paragraph.split.map { |x| x.to_i } }
+IO.foreach('input/day1.txt', '') { |paragraph| inventory << paragraph.split.map(&:to_i) }
 
-calories_per_elf = inventory.map { |food_calories| food_calories.sum }
+calories_per_elf = inventory.map(&:sum)
 
 # part 1
 puts calories_per_elf.max
